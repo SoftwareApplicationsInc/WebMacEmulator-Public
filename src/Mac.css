@@ -1,0 +1,124 @@
+.Mac {
+    user-select: none;
+}
+
+/* `@media (display-mode: fullscreen)` does not appear to work in iOS Safari,
+we need to use a manual class name. */
+body.fullscreen {
+    background: black;
+}
+
+.Mac-Loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.Mac-Loading-Fraction {
+    opacity: 0.5;
+    padding-left: 0.5em;
+}
+
+.Mac-Screen {
+    /* The emulator draws the cursor */
+    cursor: none;
+    /* Avoid bluriness on retina screens */
+    image-rendering: pixelated;
+    /* Disable touble-tap to zoom, we want double-clicking in the Mac to
+    take precedence. */
+    touch-action: none;
+}
+
+.Mac-Screen.Mac-Screen-Smooth-Scaling {
+    image-rendering: auto;
+}
+
+.Mac-Keyboard-Input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    opacity: 0%;
+    z-index: 1;
+    /* 16pt+ font size is required to prevent zooming into the field on mobile */
+    font-size: 16px;
+}
+
+.Mac-Overlay {
+    position: absolute;
+    top: var(--screen-underscan);
+    left: var(--screen-underscan);
+    bottom: var(--screen-underscan);
+    right: var(--screen-underscan);
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Mac-Overlay:before {
+    font-size: 48px;
+    font-weight: bold;
+    display: block;
+}
+
+.Mac-Overlay:after {
+    font-size: 16px;
+    display: block;
+}
+
+.Mac-Drag-Overlay:before {
+    content: "Copy to Mac";
+}
+
+.Mac-Drag-Overlay:after {
+    content: "Disk images will be mounted";
+}
+
+.Mac-Drag-Overlay.Mac-Drag-Overlay-Downloads:after {
+    content: "Disk images will be mounted, files will be placed in the “Downloads” folder in “The Outside World”.";
+}
+
+.Mac-Ethernet-Status {
+    position: absolute;
+    bottom: var(--screen-ethernet-status-bottom);
+    display: var(--screen-ethernet-status-display);
+    right: 32px;
+    font-family: Geneva, Helvetica, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.Mac-Ethernet-Status-Details {
+    z-index: 1;
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    color: #000;
+    font-size: 14px;
+    white-space: nowrap;
+    padding: 8px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.Mac-Ethernet-Status-Peers {
+    margin-top: 8px;
+}
+
+.Mac-Ethernet-Status-Peers ul {
+    margin: 0;
+    padding-left: 16px;
+}

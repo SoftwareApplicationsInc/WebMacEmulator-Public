@@ -1,0 +1,16 @@
+[submodule "macemu"]
+	path = macemu
+	url = https://github.com/mihaip/macemu
+	branch = infinite-mac-kanjitalk755
+[submodule "XADMaster"]
+	path = XADMaster
+	url = https://github.com/mihaip/XADMaster
+[submodule "UniversalDetector"]
+	path = UniversalDetector
+	url = https://github.com/MacPaw/universal-detector
+[submodule "minivmac"]
+	path = minivmac
+	url = https://github.com/mihaip/minivmac
+[submodule "dingusppc"]
+	path = dingusppc
+	url = https://github.com/mihaip/dingusppc
